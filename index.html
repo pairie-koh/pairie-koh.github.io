@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pairie Koh</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 80px 24px;
+        }
+
+        .header {
+            margin-bottom: 56px;
+        }
+
+        .header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+        }
+
+        .header .tagline {
+            font-size: 1.1rem;
+            color: #888;
+        }
+
+        .header .tagline a {
+            color: #6ea8fe;
+            text-decoration: none;
+        }
+
+        .header .tagline a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        section h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .now-block {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .now-block p {
+            font-size: 1.05rem;
+            color: #ccc;
+        }
+
+        .now-block a {
+            color: #6ea8fe;
+            text-decoration: none;
+        }
+
+        .now-block a:hover {
+            text-decoration: underline;
+        }
+
+        .now-block .backed {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .experience-item {
+            margin-bottom: 24px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item .role {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .experience-item .org {
+            font-size: 0.95rem;
+            color: #888;
+            margin-top: 2px;
+        }
+
+        .experience-item .desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .research-item {
+            margin-bottom: 20px;
+        }
+
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-item .title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .research-item .detail {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 4px;
+        }
+
+        .paper {
+            background: #111;
+            border: 1px solid #1a1a1a;
+            border-radius: 12px;
+            padding: 20px 24px;
+        }
+
+        .paper .paper-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .paper .paper-authors {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .contact {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .contact a {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact a:hover {
+            color: #fff;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1a1a1a;
+            margin: 0 0 48px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Pairie Koh</h1>
+            <p class="tagline">AI Engineer at <a href="https://kenziwealth.com/" target="_blank">Kenzi Wealth</a></p>
+        </div>
+
+        <section>
+            <h2>Now</h2>
+            <div class="now-block">
+                <p>Building AI agents to bring institutional-grade asset management to every investor with reinforcement learning.</p>
+                <p class="backed">Backed by EFG Hermes.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Previously</h2>
+            <div class="experience-item">
+                <div class="role">Quantitative Developer</div>
+                <div class="org">Eliz Precious Metals</div>
+                <div class="desc">Largest bullion service in Malaysia.</div>
+            </div>
+            <div class="experience-item">
+                <div class="role">Georgia Institute of Technology</div>
+                <div class="desc">Admitted at 16.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Research</h2>
+            <div class="research-item">
+                <div class="title">Stablecoin Risk</div>
+                <div class="detail">Studying how wrapped stablecoins create shadow-banking dynamics in DeFi.</div>
+            </div>
+            <div class="research-item">
+                <div class="title">Market Microstructure</div>
+                <div class="detail">Analyzing leverage, liquidity, and contagion across protocols using on-chain data.</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Papers</h2>
+            <div class="paper">
+                <div class="paper-title">Wrapped Stablecoins and the DeFi System Risk</div>
+                <div class="paper-authors">with Kuntara Pukthuanthong</div>
+            </div>
+        </section>
+
+        <hr class="divider">
+
+        <section>
+            <h2>Contact</h2>
+            <div class="contact">
+                <a href="mailto:pk@kenziwealth.com">pk@kenziwealth.com</a>
+                <a href="https://www.linkedin.com/in/pairie-koh-687369279" target="_blank">LinkedIn</a>
+                <a href="https://github.com/pairie-koh" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
