@@ -96,7 +96,7 @@
         }
 
         .header {
-            margin-bottom: 64px;
+            margin-bottom: 40px;
         }
 
         .header h1 {
@@ -116,7 +116,6 @@
         .header .tagline a {
             color: #7c6cb0;
             text-decoration: none;
-            font-weight: 500;
             transition: color 0.3s;
         }
 
@@ -124,13 +123,54 @@
             color: #5a4a99;
         }
 
+        /* Tabs */
+        .tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 48px;
+        }
+
+        .tab {
+            padding: 8px 20px;
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: 1.05rem;
+            color: #7a7490;
+            background: transparent;
+            border: 1px solid rgba(160, 153, 184, 0.25);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab:hover {
+            color: #5a4a99;
+            border-color: rgba(122, 108, 176, 0.4);
+        }
+
+        .tab.active {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: #2d2845;
+            border-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 2px 12px rgba(140, 130, 170, 0.1);
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         section {
             margin-bottom: 48px;
         }
 
         section h2 {
-            font-size: 0.78rem;
-            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: #a099b8;
@@ -173,8 +213,7 @@
         }
 
         .experience-item .role {
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 1.1rem;
             color: #2d2845;
         }
 
@@ -200,19 +239,25 @@
 
         .research-item .title {
             font-size: 1.1rem;
-            font-weight: 400;
             color: #2d2845;
         }
 
         .research-item .detail {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #7a7490;
             margin-top: 4px;
         }
 
+        .paper {
+            margin-bottom: 16px;
+        }
+
+        .paper:last-child {
+            margin-bottom: 0;
+        }
+
         .paper .paper-title {
             font-size: 1.1rem;
-            font-weight: 400;
             font-style: italic;
             color: #2d2845;
         }
@@ -239,7 +284,6 @@
             color: #7a7490;
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
             transition: color 0.3s;
             position: relative;
         }
@@ -292,57 +336,79 @@
             <p class="tagline">AI Engineer at <a href="https://kenziwealth.com/" target="_blank">Kenzi Wealth</a></p>
         </div>
 
-        <section>
-            <h2>Now</h2>
-            <div class="card now-block">
-                <p>Building AI agents to bring institutional-grade asset management to every investor with reinforcement learning.</p>
-                <p class="backed">Backed by EFG Hermes.</p>
-            </div>
-        </section>
+        <div class="tabs">
+            <button class="tab active" data-tab="about">About</button>
+            <button class="tab" data-tab="research">Research</button>
+        </div>
 
-        <section>
-            <h2>Previously</h2>
-            <div class="experience-item">
-                <div class="role">Quantitative Developer</div>
-                <div class="org">Eliz Precious Metals</div>
-                <div class="desc">Largest bullion service in Malaysia.</div>
-            </div>
-            <div class="experience-item">
-                <div class="role">Georgia Institute of Technology</div>
-                <div class="desc">Admitted at 16.</div>
-            </div>
-        </section>
+        <!-- About Tab -->
+        <div class="tab-content active" id="about">
+            <section>
+                <h2>Now</h2>
+                <div class="card now-block">
+                    <p>Building AI agents to bring institutional-grade asset management to every investor with reinforcement learning.</p>
+                    <p class="backed">Backed by EFG Hermes.</p>
+                </div>
+            </section>
 
-        <section>
-            <h2>Research</h2>
-            <div class="research-item">
-                <div class="title">Stablecoin Risk</div>
-                <div class="detail">Studying how wrapped stablecoins create shadow-banking dynamics in DeFi.</div>
-            </div>
-            <div class="research-item">
-                <div class="title">Market Microstructure</div>
-                <div class="detail">Analyzing leverage, liquidity, and contagion across protocols using on-chain data.</div>
-            </div>
-        </section>
+            <section>
+                <h2>Previously</h2>
+                <div class="experience-item">
+                    <div class="role">Quantitative Developer</div>
+                    <div class="org">Eliz Precious Metals</div>
+                    <div class="desc">Largest bullion service in Malaysia.</div>
+                </div>
+                <div class="experience-item">
+                    <div class="role">Georgia Institute of Technology</div>
+                    <div class="desc">Admitted at 16.</div>
+                </div>
+            </section>
 
-        <section>
-            <h2>Papers</h2>
-            <div class="card paper">
-                <div class="paper-title">Wrapped Stablecoins and the DeFi System Risk</div>
-                <div class="paper-authors">with Kuntara Pukthuanthong</div>
-            </div>
-        </section>
+            <hr class="divider">
 
-        <hr class="divider">
+            <section>
+                <h2>Contact</h2>
+                <div class="contact">
+                    <a href="mailto:pk@kenziwealth.com">pk@kenziwealth.com</a>
+                    <a href="https://www.linkedin.com/in/pairie-koh-687369279" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/pairie-koh" target="_blank">GitHub</a>
+                </div>
+            </section>
+        </div>
 
-        <section>
-            <h2>Contact</h2>
-            <div class="contact">
-                <a href="mailto:pk@kenziwealth.com">pk@kenziwealth.com</a>
-                <a href="https://www.linkedin.com/in/pairie-koh-687369279" target="_blank">LinkedIn</a>
-                <a href="https://github.com/pairie-koh" target="_blank">GitHub</a>
-            </div>
-        </section>
+        <!-- Research Tab -->
+        <div class="tab-content" id="research">
+            <section>
+                <h2>Areas</h2>
+                <div class="research-item">
+                    <div class="title">Stablecoin Risk</div>
+                    <div class="detail">Studying how wrapped stablecoins create shadow-banking dynamics in DeFi.</div>
+                </div>
+                <div class="research-item">
+                    <div class="title">Market Microstructure</div>
+                    <div class="detail">Analyzing leverage, liquidity, and contagion across protocols using on-chain data.</div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Papers</h2>
+                <div class="card paper">
+                    <div class="paper-title">Wrapped Stablecoins and the DeFi System Risk</div>
+                    <div class="paper-authors">with Kuntara Pukthuanthong</div>
+                </div>
+            </section>
+        </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
