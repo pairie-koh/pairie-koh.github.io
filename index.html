@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pairie Koh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,43 +15,113 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
-            background: #0a0a0a;
-            color: #e0e0e0;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f0eef5;
+            color: #4a4560;
+            line-height: 1.7;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Cloudy background blobs */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        body::before {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, #d4c5f0 0%, transparent 70%);
+            top: -100px;
+            right: -150px;
+            animation: float1 20s ease-in-out infinite;
+        }
+
+        body::after {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, #b8d4f0 0%, transparent 70%);
+            bottom: -50px;
+            left: -100px;
+            animation: float2 25s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(-30px, 40px); }
+            66% { transform: translate(20px, -20px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0); }
+            33% { transform: translate(40px, -30px); }
+            66% { transform: translate(-20px, 30px); }
+        }
+
+        .cloud-accent {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            z-index: 0;
+            pointer-events: none;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, #f0c6d4 0%, transparent 70%);
+            top: 40%;
+            left: 50%;
+            animation: float3 22s ease-in-out infinite;
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%); }
+            33% { transform: translate(-40%, -60%); }
+            66% { transform: translate(-60%, -40%); }
         }
 
         .container {
-            max-width: 720px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 80px 24px;
+            padding: 100px 24px 80px;
+            position: relative;
+            z-index: 1;
         }
 
         .header {
-            margin-bottom: 56px;
+            margin-bottom: 64px;
         }
 
         .header h1 {
-            font-size: 2.4rem;
+            font-size: 2.6rem;
             font-weight: 700;
-            color: #ffffff;
+            color: #2d2845;
             margin-bottom: 8px;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
         }
 
         .header .tagline {
             font-size: 1.1rem;
-            color: #888;
+            color: #7a7490;
+            font-weight: 400;
         }
 
         .header .tagline a {
-            color: #6ea8fe;
+            color: #7c6cb0;
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         .header .tagline a:hover {
-            text-decoration: underline;
+            color: #5a4a99;
         }
 
         section {
@@ -56,43 +129,43 @@
         }
 
         section h2 {
-            font-size: 0.85rem;
+            font-size: 0.78rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #555;
+            letter-spacing: 0.1em;
+            color: #a099b8;
             margin-bottom: 20px;
         }
 
-        .now-block {
-            background: #111;
-            border: 1px solid #1a1a1a;
-            border-radius: 12px;
-            padding: 24px;
+        .card {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 24px rgba(140, 130, 170, 0.08);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(140, 130, 170, 0.14);
+            transform: translateY(-2px);
         }
 
         .now-block p {
             font-size: 1.05rem;
-            color: #ccc;
-        }
-
-        .now-block a {
-            color: #6ea8fe;
-            text-decoration: none;
-        }
-
-        .now-block a:hover {
-            text-decoration: underline;
+            color: #4a4560;
         }
 
         .now-block .backed {
-            margin-top: 8px;
-            font-size: 0.9rem;
-            color: #666;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #9a94b0;
         }
 
         .experience-item {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
 
         .experience-item:last-child {
@@ -102,23 +175,23 @@
         .experience-item .role {
             font-size: 1.05rem;
             font-weight: 600;
-            color: #fff;
+            color: #2d2845;
         }
 
         .experience-item .org {
             font-size: 0.95rem;
-            color: #888;
+            color: #7a7490;
             margin-top: 2px;
         }
 
         .experience-item .desc {
-            font-size: 0.9rem;
-            color: #666;
+            font-size: 0.88rem;
+            color: #9a94b0;
             margin-top: 4px;
         }
 
         .research-item {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .research-item:last-child {
@@ -128,59 +201,90 @@
         .research-item .title {
             font-size: 1rem;
             font-weight: 600;
-            color: #fff;
+            color: #2d2845;
         }
 
         .research-item .detail {
             font-size: 0.9rem;
-            color: #888;
+            color: #7a7490;
             margin-top: 4px;
-        }
-
-        .paper {
-            background: #111;
-            border: 1px solid #1a1a1a;
-            border-radius: 12px;
-            padding: 20px 24px;
         }
 
         .paper .paper-title {
             font-size: 1rem;
             font-weight: 600;
-            color: #fff;
+            color: #2d2845;
         }
 
         .paper .paper-authors {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 4px;
-        }
-
-        .contact {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .contact a {
-            color: #888;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .contact a:hover {
-            color: #fff;
+            font-size: 0.88rem;
+            color: #9a94b0;
+            margin-top: 6px;
         }
 
         .divider {
             border: none;
-            border-top: 1px solid #1a1a1a;
+            border-top: 1px solid rgba(160, 153, 184, 0.2);
             margin: 0 0 48px 0;
+        }
+
+        .contact {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .contact a {
+            color: #7a7490;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .contact a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: #7c6cb0;
+            transition: width 0.3s;
+        }
+
+        .contact a:hover {
+            color: #5a4a99;
+        }
+
+        .contact a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 60px 20px 60px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            body::before {
+                width: 350px;
+                height: 350px;
+            }
+
+            body::after {
+                width: 300px;
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="cloud-accent"></div>
     <div class="container">
         <div class="header">
             <h1>Pairie Koh</h1>
@@ -189,7 +293,7 @@
 
         <section>
             <h2>Now</h2>
-            <div class="now-block">
+            <div class="card now-block">
                 <p>Building AI agents to bring institutional-grade asset management to every investor with reinforcement learning.</p>
                 <p class="backed">Backed by EFG Hermes.</p>
             </div>
@@ -222,7 +326,7 @@
 
         <section>
             <h2>Papers</h2>
-            <div class="paper">
+            <div class="card paper">
                 <div class="paper-title">Wrapped Stablecoins and the DeFi System Risk</div>
                 <div class="paper-authors">with Kuntara Pukthuanthong</div>
             </div>
